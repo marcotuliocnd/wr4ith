@@ -28,7 +28,9 @@ Route.group(() => {
   Route.post('/', 'ClipsController.store')
   Route.get('/', 'ClipsController.list')
   Route.patch('/:clip_id', 'ClipsController.vote')
-}).prefix('clips')
+})
+  .prefix('clips')
+  .middleware(['auth'])
 
 Route.group(() => {
   Route.post('/register', 'AuthController.register')

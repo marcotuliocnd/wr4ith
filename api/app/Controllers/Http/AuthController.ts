@@ -32,7 +32,7 @@ export default class AuthController {
       success: true,
       data: {
         user: data,
-        token: this.generateToken(data),
+        token: this.generateToken(user.id),
       },
     })
   }
