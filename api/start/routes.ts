@@ -29,3 +29,8 @@ Route.group(() => {
   Route.get('/', 'ClipsController.list')
   Route.patch('/:clip_id', 'ClipsController.vote')
 }).prefix('clips')
+
+Route.group(() => {
+  Route.post('/register', 'AuthController.register')
+  Route.post('/login', 'AuthController.login')
+}).prefix('auth')

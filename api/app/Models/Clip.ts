@@ -1,11 +1,11 @@
 import { Schema, model, Document } from 'mongoose'
 
 interface ClipDocument extends Document {
-  link: String
-  username: String
-  display_name: String
-  channel: String
-  status: String
+  link: string
+  username: string
+  display_name: string
+  channel: string
+  status: string
 }
 
 const Clip = new Schema(

@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@adonisjs/assembler": "^3.0.6",
+    "@types/bcrypt": "^3.0.0",
+    "@types/jsonwebtoken": "^8.5.0",
     "adonis-preset-ts": "^2.0.0",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
@@ -25,6 +27,8 @@
   "dependencies": {
     "@adonisjs/core": "^5.0.4-preview-rc-2.1",
     "@adonisjs/repl": "^1.1.6",
+    "bcrypt": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
     "proxy-addr": "^2.0.6",
     "reflect-metadata": "^0.1.13",
