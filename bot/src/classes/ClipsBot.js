@@ -1,5 +1,7 @@
 const TwitchClient = require('../config/twitch');
 
+const ApiService = require('../services/ApiService');
+
 const LINK_REGEX = new RegExp(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi);
 
 const gatherMessageWithClipsCommand = async ({ message, channel, tags }) => {
@@ -12,12 +14,12 @@ const gatherMessageWithClipsCommand = async ({ message, channel, tags }) => {
 
     await TwitchClient.say(channel, `@${tags.username} seu clip foi salvo para análise!`);
 
-    console.log({
+    await ApiService.saveClip({
         link,
         username: tags.username,
         display_name: tags['display-name'],
         channel,
-    });
+    })
 }
 
 const confirmStringIsLink = (string = '') => {
