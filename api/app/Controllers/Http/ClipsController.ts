@@ -18,8 +18,9 @@ export default class ClipsController {
 
   async list({ request, response }: HttpContextContract) {
     const { page = 1, limit = 10 } = request.get()
+    const { user } = request
 
-    const data = await Clip.find({})
+    const data = await Clip.find({ channel: user?.channel })
       .limit(parseInt(limit, 10))
       .skip(parseInt(page, 10) !== 1 ? parseInt(limit, 10) * parseInt(page, 10) : 0)
 
@@ -31,9 +32,13 @@ export default class ClipsController {
 
   async vote({ request, response, params }: HttpContextContract) {
     const { clip_id: clipId } = params
+    const { user } = request
     const { status } = await request.validate(ClipVoteValidator)
 
-    const data = await Clip.findById(clipId)
+    const data = await Clip.findOne({
+      id: clipId,
+      channel: user?.channel,
+    })
 
     if (!data) {
       return response.notFound({ success: false, message: 'Clip not found' })
