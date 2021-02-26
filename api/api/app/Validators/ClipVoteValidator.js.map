@@ -1,1 +1,0 @@
-{"version":3,"file":"ClipVoteValidator.js","sourceRoot":"","sources":["../../../app/Validators/ClipVoteValidator.ts"],"names":[],"mappings":";;AAAA,2EAAmD;AAGnD,MAAqB,iBAAiB;IACpC,YAAsB,GAAwB;QAAxB,QAAG,GAAH,GAAG,CAAqB;QAqBvC,WAAM,GAAG,kBAAM,CAAC,MAAM,CAAC;YAC5B,MAAM,EAAE,kBAAM,CAAC,MAAM,EAAE;SACxB,CAAC,CAAA;QAaK,aAAQ,GAAG,EAAE,CAAA;IApC6B,CAAC;CAqCnD;AAtCD,oCAsCC"}
