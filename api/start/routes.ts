@@ -20,19 +20,22 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.group(() => {
+  Route.group(() => {
+    Route.post('/', 'ClipsController.store')
+    Route.get('/', 'ClipsController.list')
+    Route.patch('/:clip_id', 'ClipsController.vote')
+  })
+    .prefix('clips')
+    .middleware(['auth'])
+
+  Route.group(() => {
+    Route.post('/register', 'AuthController.register')
+    Route.post('/login', 'AuthController.login')
+  }).prefix('auth')
+})
+  .prefix('/api')
+
 Route.get('/', async () => {
   return { status: 'running' }
 })
-
-Route.group(() => {
-  Route.post('/', 'ClipsController.store')
-  Route.get('/', 'ClipsController.list')
-  Route.patch('/:clip_id', 'ClipsController.vote')
-})
-  .prefix('clips')
-  .middleware(['auth'])
-
-Route.group(() => {
-  Route.post('/register', 'AuthController.register')
-  Route.post('/login', 'AuthController.login')
-}).prefix('auth')
