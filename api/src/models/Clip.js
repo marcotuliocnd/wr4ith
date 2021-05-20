@@ -9,6 +9,11 @@ const ClipModel = Model(
     userId: {
       type: Schema.Types.ObjectId,
       ref: 'User'
+    },
+    status: {
+      type: String,
+      enum: ['pending', 'approved', 'disapproved'],
+      default: 'pending'
     }
   }, {
     timestamps: true

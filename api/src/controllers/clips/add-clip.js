@@ -28,7 +28,8 @@ const add = async (req, res) => {
       link,
       username,
       displayName,
-      userId: user.id
+      userId: user.id,
+      status: 'pending'
     })
 
     clip = await clip.populate('userId').execPopulate()
