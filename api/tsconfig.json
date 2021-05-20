@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "out": "./dist",
+    "module": "commonjs",
+    "target": "ES2017",
+    "esModuleInterop": true,
+    "allowJs": true
+  }
+}
