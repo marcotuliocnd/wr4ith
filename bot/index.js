@@ -17,9 +17,13 @@ const messageCallback = async (channel, tags, message, self) => {
 
     const commandTagOnMessage = message.split(/(\s+)/)[0];
 
-    const genericFunctionExecuter = COMMANDS_SWITCHER[commandTagOnMessage] || COMMANDS_SWITCHER['INVALID_FUNCTION'];
+    if (commandTagOnMessage !== '!clips') {
+        return;
+    }
 
-    await genericFunctionExecuter({ message, tags, channel, self });
+    const clipsFunction = COMMANDS_SWITCHER['!clips'];
+
+    await clipsFunction({ message, tags, channel, self });
 };
 
 bootstrap();
