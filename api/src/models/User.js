@@ -8,6 +8,8 @@ const UserModel = Model(
       type: String
     },
     password: String
+  }, {
+    timestamps: true
   })
 )
 
